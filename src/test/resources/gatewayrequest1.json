@@ -1,0 +1,66 @@
+{
+    "resource" : "/api/{proxy+}",
+    "path" : "/api/demo/helloworld/Locations",
+    "httpMethod" : "GET",
+    "headers" : {
+      "accept" : "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+      "accept-encoding" : "gzip, deflate, br",
+      "accept-language" : "en-US,en;q=0.9",
+      "Host" : "1kd5gbqe1d.execute-api.us-east-1.amazonaws.com",
+      "upgrade-insecure-requests" : "1",
+      "User-Agent" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36",
+      "X-Amzn-Trace-Id" : "Root=1-5c07cfc9-86557f9e6d66497662e48216",
+      "X-Forwarded-For" : "38.142.96.138",
+      "X-Forwarded-Port" : "443",
+      "X-Forwarded-Proto" : "https"
+    },
+    "multiValueHeaders" : {
+      "accept" : [ "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8" ],
+      "accept-encoding" : [ "gzip, deflate, br" ],
+      "accept-language" : [ "en-US,en;q=0.9" ],
+      "Host" : [ "1kd5gbqe1d.execute-api.us-east-1.amazonaws.com" ],
+      "upgrade-insecure-requests" : [ "1" ],
+      "User-Agent" : [ "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36" ],
+      "X-Amzn-Trace-Id" : [ "Root=1-5c07cfc9-86557f9e6d66497662e48216" ],
+      "X-Forwarded-For" : [ "38.142.96.138" ],
+      "X-Forwarded-Port" : [ "443" ],
+      "X-Forwarded-Proto" : [ "https" ]
+    },
+    "queryStringParameters" : null,
+    "multiValueQueryStringParameters" : null,
+    "pathParameters" : {
+      "proxy" : "demo/helloworld/Locations"
+    },
+    "stageVariables" : null,
+    "requestContext" : {
+      "resourceId" : "qgxaem",
+      "resourcePath" : "/api/{proxy+}",
+      "httpMethod" : "GET",
+      "extendedRequestId" : "Rb1ndFbLIAMFeTA=",
+      "requestTime" : "05/Dec/2018:13:16:57 +0000",
+      "path" : "/default/api/demo/helloworld/Locations",
+      "accountId" : "713044078609",
+      "protocol" : "HTTP/1.1",
+      "stage" : "default",
+      "domainPrefix" : "1kd5gbqe1d",
+      "requestTimeEpoch" : 1544015817381,
+      "requestId" : "0abb0d7d-f890-11e8-8a63-33ac946e3713",
+      "identity" : {
+        "cognitoIdentityPoolId" : null,
+        "accountId" : null,
+        "cognitoIdentityId" : null,
+        "caller" : null,
+        "sourceIp" : "38.142.96.138",
+        "accessKey" : null,
+        "cognitoAuthenticationType" : null,
+        "cognitoAuthenticationProvider" : null,
+        "userArn" : null,
+        "userAgent" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36",
+        "user" : null
+      },
+      "domainName" : "1kd5gbqe1d.execute-api.us-east-1.amazonaws.com",
+      "apiId" : "1kd5gbqe1d"
+    },
+    "body" : null,
+    "isBase64Encoded" : false
+  }

@@ -1,0 +1,73 @@
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+apply plugin: 'java'
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+
+version = '0.0.1'
+group = 'com.github.RocketPartners'
+sourceCompatibility = 1.8
+
+repositories { 
+   mavenLocal()
+   mavenCentral() 
+   maven { url 'https://jitpack.io' }
+   maven { url "http://redshift-maven-repository.s3-website-us-east-1.amazonaws.com/release" }
+}
+
+
+dependencies {
+
+	if (gradle.ext.liftck_snooze['addRocketSnoozeProjectToClasspath']) {
+    		compile findProject(":rckt_snooze")
+    }
+    else {
+   		compile("com.github.RocketPartners:rckt_snooze:release-0.3.x-SNAPSHOT") { changing = true }
+    }
+    
+    compile 'com.amazonaws:aws-lambda-java-core:1.2.0'
+}
+
+task buildZip(type: Zip) {
+    from compileJava
+    from processResources              
+    into('lib') {
+        from configurations.compileClasspath
+    }           
+}
+
+build.dependsOn buildZip
+
+
+
+/************************************************************
+ * Ensuring source directories are created if they do not 
+ * already exist when running 'gradle eclipse'
+ */
+eclipse {
+    classpath {
+        file {
+            tasks.eclipse.dependsOn("create-dirs")
+        }
+    }
+}
+
+
+
+/************************************************************
+ * This task should be used when creating a new project as
+ * it will create all source and resource directories.  This
+ * task is automatically executed during the 
+ * 'gradle eclipse' command.
+ */
+task "create-dirs" {
+    doLast {
+       sourceSets*.java.srcDirs*.each { it.mkdirs() }
+       sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+   }
+}
+
+  
